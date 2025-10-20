@@ -40,20 +40,20 @@ public class StillwoodsDimensions {
 
     public static void bootstrapType(BootstapContext<DimensionType> context) {
         context.register(STILLWOODS_TYPE, new DimensionType(
-                OptionalLong.of(18000), // fixedTime
-                false, // hasSkylight
+                OptionalLong.empty(),//OptionalLong.of(18000), // fixedTime
+                true, // hasSkylight
                 false, // hasCeiling
                 false, // ultraWarm
                 false, // natural
                 1.0, // coordinateScale
                 true, // bedWorks
-                false, // respawnAnchorWorks
+                true, // respawnAnchorWorks
                 0, // minY
                 256, // height
                 256, // logicalHeight
                 BlockTags.INFINIBURN_OVERWORLD, // infiniburn
                 STILLWOODS_EFFECTS, // effectsLocation
-                0.0f, // ambientLight
+                -0.05f, // ambientLight
                 new DimensionType.MonsterSettings(false, false, ConstantInt.of(0), 0)));
     }
 

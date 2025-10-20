@@ -1,12 +1,11 @@
 {
-  "ambient_light": 0.0,
+  "ambient_light": -0.05,
   "bed_works": true,
   "coordinate_scale": 1.0,
   "effects": "stillwoods:stillwoods",
-  "fixed_time": 18000,
   "has_ceiling": false,
   "has_raids": false,
-  "has_skylight": false,
+  "has_skylight": true,
   "height": 256,
   "infiniburn": "#minecraft:infiniburn_overworld",
   "logical_height": 256,
@@ -15,6 +14,6 @@
   "monster_spawn_light_level": 0,
   "natural": false,
   "piglin_safe": false,
-  "respawn_anchor_works": false,
+  "respawn_anchor_works": true,
   "ultrawarm": false
 }
