@@ -1,0 +1,11 @@
+{
+  "type": "stillwoods:stillwoods_type",
+  "generator": {
+    "type": "minecraft:noise",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "stillwoods:stygian_woodlands"
+    },
+    "settings": "minecraft:overworld"
+  }
+}

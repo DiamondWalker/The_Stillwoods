@@ -23,3 +23,8 @@ run
 
 # Files from Forge MDK
 forge*changelog.txt
+/src/generated/resources/.cache/103d9f3f36b01595f1aa5172191e60eff02e6924
+/run-data/logs/2025-10-20-1.log.gz
+/run-data/logs/2025-10-20-2.log.gz
+/run-data/logs/
+/run-data/config/fml.toml
