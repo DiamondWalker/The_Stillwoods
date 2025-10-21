@@ -4,6 +4,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.Musics;
 import net.minecraft.world.level.biome.*;
 import stillwoods.TheStillwoods;
 
@@ -63,7 +64,7 @@ public class StillwoodsBiomes {
                         .foliageColorOverride(0x212121)
                         .fogColor(0x000000)
                         //.ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                        //.backgroundMusic(Musics.createGameMusic(ModSounds.BAR_BRAWL.getHolder().get()))
+                        .backgroundMusic(null)
                         .build())
                 .build();
     }

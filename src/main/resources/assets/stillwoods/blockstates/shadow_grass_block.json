@@ -1,0 +1,24 @@
+{
+  "variants": {
+    "snowy=false": [
+      {
+        "model": "stillwoods:block/shadow_grass_block"
+      },
+      {
+        "model": "stillwoods:block/shadow_grass_block",
+        "y": 90
+      },
+      {
+        "model": "stillwoods:block/shadow_grass_block",
+        "y": 180
+      },
+      {
+        "model": "stillwoods:block/shadow_grass_block",
+        "y": 270
+      }
+    ],
+    "snowy=true": {
+      "model": "stillwoods:block/shadow_grass_block_snow"
+    }
+  }
+}

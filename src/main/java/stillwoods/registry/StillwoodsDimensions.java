@@ -41,10 +41,10 @@ public class StillwoodsDimensions {
     public static void bootstrapType(BootstapContext<DimensionType> context) {
         context.register(STILLWOODS_TYPE, new DimensionType(
                 OptionalLong.empty(),//OptionalLong.of(18000), // fixedTime
-                true, // hasSkylight
+                StillwoodsSpecialEffects.RENDER_MOON, // hasSkylight
                 false, // hasCeiling
                 false, // ultraWarm
-                false, // natural
+                true, // natural
                 1.0, // coordinateScale
                 true, // bedWorks
                 true, // respawnAnchorWorks

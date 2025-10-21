@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "stillwoods:block/shadow_dirt",
+    "particle": "stillwoods:block/shadow_dirt",
+    "side": "stillwoods:block/shadow_grass_block_snow",
+    "top": "stillwoods:block/shadow_grass_block_top"
+  }
+}

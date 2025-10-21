@@ -19,13 +19,12 @@ import org.joml.Vector3f;
 import javax.annotation.Nullable;
 
 public class StillwoodsSpecialEffects extends DimensionSpecialEffects {
+    public static final boolean RENDER_MOON = false;
+
     private static final ResourceLocation MOON_LOCATION = new ResourceLocation("textures/environment/moon_phases.png");
-    private static final ResourceLocation SUN_LOCATION = new ResourceLocation("textures/environment/sun.png");
 
     @Nullable
     private VertexBuffer starBuffer;
-    @Nullable
-    private VertexBuffer skyBuffer;
     @Nullable
     private VertexBuffer darkBuffer;
 
@@ -33,7 +32,6 @@ public class StillwoodsSpecialEffects extends DimensionSpecialEffects {
         super(192.0F, true, DimensionSpecialEffects.SkyType.NONE, false, false);
 
         this.createStars();
-        this.createLightSky();
         this.createDarkSky();
     }
 
@@ -54,6 +52,7 @@ public class StillwoodsSpecialEffects extends DimensionSpecialEffects {
 
     @Override
     public boolean renderSky(ClientLevel level, int ticks, float partialTicks, PoseStack poseStack, Camera camera, Matrix4f projectionMatrix, boolean isFoggy, Runnable setupFog) {
+        if (!RENDER_MOON) return true;
         Minecraft minecraft = Minecraft.getInstance();
 
         setupFog.run();
@@ -105,13 +104,14 @@ public class StillwoodsSpecialEffects extends DimensionSpecialEffects {
                 poseStack.pushPose();
                 float f11 = 1.0F - level.getRainLevel(partialTicks);
                 RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, f11);
-                poseStack.mulPose(Axis.YP.rotationDegrees(-90.0F));
-                poseStack.mulPose(Axis.XP.rotationDegrees(level.getTimeOfDay(partialTicks) * 360.0F));
+                poseStack.mulPose(Axis.YP.rotationDegrees(-50.0F));
+                poseStack.mulPose(Axis.XP.rotationDegrees(67.0f));
+                poseStack.mulPose(Axis.ZP.rotationDegrees(level.getTimeOfDay(partialTicks) * 360.0F));
                 Matrix4f matrix4f1 = poseStack.last().pose();
                 float f12 = 20.0F;
                 RenderSystem.setShader(GameRenderer::getPositionTexShader);
                 RenderSystem.setShaderTexture(0, MOON_LOCATION);
-                int moonPhase = level.getMoonPhase();
+                int moonPhase = 0;//level.getMoonPhase();
                 int l = moonPhase % 4;
                 int i1 = moonPhase / 4 % 2;
                 float f13 = (float)(l + 0) / 4.0F;
@@ -168,6 +168,11 @@ public class StillwoodsSpecialEffects extends DimensionSpecialEffects {
     {
         return true;
     }
+
+    /*@Override
+    public void adjustLightmapColors(ClientLevel level, float partialTicks, float skyDarken, float blockLightRedFlicker, float skyLight, int pixelX, int pixelY, Vector3f colors) {
+        colors.mul(colors);
+    }*/
 
     private void createStars() {
         Tesselator tesselator = Tesselator.getInstance();
@@ -229,20 +234,6 @@ public class StillwoodsSpecialEffects extends DimensionSpecialEffects {
         }
 
         return p_234260_.end();
-    }
-
-    private void createLightSky() {
-        Tesselator tesselator = Tesselator.getInstance();
-        BufferBuilder bufferbuilder = tesselator.getBuilder();
-        if (this.skyBuffer != null) {
-            this.skyBuffer.close();
-        }
-
-        this.skyBuffer = new VertexBuffer(VertexBuffer.Usage.STATIC);
-        BufferBuilder.RenderedBuffer bufferbuilder$renderedbuffer = buildSkyDisc(bufferbuilder, 16.0F);
-        this.skyBuffer.bind();
-        this.skyBuffer.upload(bufferbuilder$renderedbuffer);
-        VertexBuffer.unbind();
     }
 
     private static BufferBuilder.RenderedBuffer buildSkyDisc(BufferBuilder p_234268_, float p_234269_) {

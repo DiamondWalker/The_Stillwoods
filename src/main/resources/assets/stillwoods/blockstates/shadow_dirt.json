@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "stillwoods:block/shadow_dirt"
+      },
+      {
+        "model": "stillwoods:block/shadow_dirt",
+        "y": 90
+      },
+      {
+        "model": "stillwoods:block/shadow_dirt",
+        "y": 180
+      },
+      {
+        "model": "stillwoods:block/shadow_dirt",
+        "y": 270
+      }
+    ]
+  }
+}
