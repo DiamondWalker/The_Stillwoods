@@ -18,6 +18,7 @@ public class PlayerSleepEvents {
     @SubscribeEvent
     public static void tryToSleep(PlayerSleepInBedEvent event) {
         Player player = event.getEntity();
+
         if (player.level().dimension() == StillwoodsDimensions.STILLWOODS_LEVEL_KEY) {
             if (player.getRandom().nextInt(10) == 0) {
                 event.setResult(Player.BedSleepingProblem.OTHER_PROBLEM);

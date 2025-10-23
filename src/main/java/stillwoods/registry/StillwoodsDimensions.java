@@ -53,7 +53,7 @@ public class StillwoodsDimensions {
                 256, // logicalHeight
                 BlockTags.INFINIBURN_OVERWORLD, // infiniburn
                 STILLWOODS_EFFECTS, // effectsLocation
-                -0.05f, // ambientLight
+                -0.1f, // ambientLight
                 new DimensionType.MonsterSettings(false, false, ConstantInt.of(0), 0)));
     }
 
