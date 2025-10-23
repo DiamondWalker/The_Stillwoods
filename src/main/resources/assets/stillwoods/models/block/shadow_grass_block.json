@@ -1,4 +1,6 @@
-{   "parent": "block/block",
+{
+    "render_type": "minecraft:cutout",
+    "parent": "block/block",
     "textures": {
         "particle": "stillwoods:block/shadow_dirt",
         "bottom": "stillwoods:block/shadow_dirt",
