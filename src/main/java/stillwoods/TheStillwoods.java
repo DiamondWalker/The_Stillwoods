@@ -19,8 +19,8 @@ public class TheStillwoods
     public TheStillwoods(FMLJavaModLoadingContext context) {
         IEventBus bus = context.getModEventBus();
 
-        StillwoodsItems.register(bus);
         StillwoodsBlocks.register(bus);
+        StillwoodsItems.register(bus);
 
         context.registerConfig(ModConfig.Type.COMMON, StillwoodsConfig.SPEC);
     }

@@ -44,20 +44,25 @@ public class EyelessKillScreen extends MonsterKillScreen {
         graphics.pose().scale(1.5F, 1.5F, 1.5F);
         graphics.pose().translate((float) this.width / 2 / 1.5f, (float) height / 2 / 1.5f, 0);
 
-        //TODO: this isn't centered vertically
+        double offset = (12.0 * (messages.length + 1)) / 2;
         graphics.pose().pushPose();
         graphics.pose().translate((rand.nextFloat() - 0.5f) * width / 140, 0, 0);
+        graphics.pose().translate(0.0, -offset, 0.0);
         for (int i = 0; i < messages.length; i++) {
+            graphics.pose().translate(0.0, 12, 0);
             Component msg = messages[i];
             if (italic) msg = msg.copy().withStyle(ChatFormatting.ITALIC);
-            graphics.drawString(this.font, msg, -font.width(msg) / 2, -font.lineHeight / 2 - (3 - i) * 12, FastColor.ARGB32.color(150, col, col, col), false);
+            graphics.drawString(this.font, msg, -font.width(msg) / 2, -font.lineHeight / 2, FastColor.ARGB32.color(150, col, col, col), false);
         }
         graphics.pose().popPose();
 
+        graphics.pose().pushPose();
+        graphics.pose().translate(0.0, -offset, 0.0);
         for (int i = 0; i < messages.length; i++) {
+            graphics.pose().translate(0.0, 12, 0);
             Component msg = messages[i];
             if (italic) msg = msg.copy().withStyle(ChatFormatting.ITALIC);
-            graphics.drawString(this.font, msg, -font.width(msg) / 2, -font.lineHeight / 2 - (3 - i) * 12, FastColor.ARGB32.color(255, col, col, col), false);
+            graphics.drawString(this.font, msg, -font.width(msg) / 2, -font.lineHeight / 2, FastColor.ARGB32.color(255, col, col, col), false);
         }
         graphics.pose().popPose();
     }

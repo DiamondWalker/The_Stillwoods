@@ -2,14 +2,19 @@ package stillwoods.registry;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import stillwoods.TheStillwoods;
+
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
 
 public class StillwoodsItems {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, TheStillwoods.MODID);
@@ -26,6 +31,8 @@ public class StillwoodsItems {
             }).build());*/
 
     public static void register(IEventBus bus) {
+
+
         ITEMS.register(bus);
         CREATIVE_MODE_TABS.register(bus);
     }
