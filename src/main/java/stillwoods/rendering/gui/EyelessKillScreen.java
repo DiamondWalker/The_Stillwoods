@@ -36,7 +36,6 @@ public class EyelessKillScreen extends MonsterKillScreen {
         graphics.blit(STATIC_TEXTURE_LOCATION, 0, 0, rand.nextInt(256), rand.nextInt(256), width, height);
         RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
 
-        // TODO: localize (maybe create helper function for building localization array?
         Component[] messages = TextUtil.getTranslatedMessages("gui.stillwoods.death.eyeless");
         boolean italic = rand.nextBoolean();
         int col = rand.nextInt(80);
